@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('./config/db'); // Connect to MongoDB
 const authRoutes = require('./routes/authRoutes'); // User authentication routes
+const productRoutes = require('./routes/productRoutes'); // Product routes
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -15,6 +16,7 @@ app.use(cors()); // Enable Cross-Origin Resource Sharing
 
 // Routes
 app.use('/api/auth', authRoutes); // Authentication routes
+app.use('/api/products', productRoutes); // Products routes
 
 // Server
 const PORT = process.env.PORT || 5000;
